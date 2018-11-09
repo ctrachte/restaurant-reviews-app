@@ -34,13 +34,10 @@ self.addEventListener('install', function(event) {
     );
 });
 
-
-/**
- * Activation of service worker
- */
 self.addEventListener('activate', function(event) {
     event.waitUntil(
-        caches.keys().then(function(cacheNames) {
+        caches.keys()
+        .then(function(cacheNames) {
             return Promise.all(
                 cacheNames.filter(function(cacheName) {
                     return cacheName.startsWith('cache-') &&
@@ -52,7 +49,6 @@ self.addEventListener('activate', function(event) {
         })
     );
 });
-
 
 // When user is offline, or if connection is breaking up, fetch data from cache instead
 self.addEventListener('fetch', function(event) {
