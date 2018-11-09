@@ -1,0 +1,65 @@
+
+/* ====================== Responsive media queries ====================== */
+
+@media only screen and (max-width: 749px) {
+  #restaurants-list li {
+    width: 100%;
+  }
+  .leaflet-top,
+  .leaflet-bottom {
+    position: absolute;
+    z-index: 499 !important; /* was 1000 and sliding over the header */
+    pointer-events: none;
+  }
+  .inside {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+  }
+  .inside header {
+    order: 0;
+    width: 100%;
+  }
+  header {
+    display: flex;
+    flex-direction: column;
+  }
+  header nav {
+    order: 0;
+  }
+  header #breadcrumb {
+    order: 1;
+    width: 100%;
+    padding-right: 0;
+    padding-left: 0;
+    text-align: center;
+  }
+  .inside #map-container {
+    top: 160px;
+    position: relative;
+    height: 300px;
+    width: 100%;
+  }
+  .inside #restaurant-container {
+    position: relative;
+    width: 100%;
+    padding: 140px 5px 0 0;
+    margin: 0 auto;
+    text-align: center;
+  }
+  .inside #reviews-container {
+    width: 100%;
+    padding: 5px;
+    margin: 0 auto;
+  }
+  .inside #footer {
+    width: 100%;
+    padding-left: 0;
+    padding-right: 0;
+    padding-top: 10px;
+  }
+
+  #reviews-container h2 {
+    text-align: center;
+  }
+}

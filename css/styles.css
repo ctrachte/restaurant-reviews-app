@@ -38,7 +38,6 @@ article, aside, canvas, details, figcaption, figure, footer, header, hgroup, men
 #maincontent {
   background-color: #f3f3f3;
   min-height: 100%;
-  width: 100vw;
   display: flex;
   flex-direction: column;
   position: relative;
@@ -46,6 +45,7 @@ article, aside, canvas, details, figcaption, figure, footer, header, hgroup, men
 #footer {
   background-color: #444;
   color: #aaa;
+	width:100%;
   font-size: 8pt;
   letter-spacing: 1px;
   padding: 25px;
@@ -81,25 +81,21 @@ nav h1 a {
     margin: 0;
     max-width: 100%;
 }
-
 /* Display list items side by side */
 #breadcrumb li {
     display: inline;
 }
-
 /* Add a slash symbol (/) before/behind each list item */
 #breadcrumb li+li:before {
     padding: 8px;
     color: black;
     content: "/\00a0";
 }
-
 /* Add a color to all links inside the list */
 #breadcrumb li a {
     color: #0275d8;
     text-decoration: none;
 }
-
 /* Add a color on mouse-over */
 #breadcrumb li a:hover {
     color: #01447e;
@@ -216,12 +212,15 @@ label {
   width: 100%;
   z-index: 1000;
 }
+.leaflet-touch .leaflet-bar a {
+	z-index: -1;
+}
 .inside #map-container {
   background: blue none repeat scroll 0 0;
-  height: 87%;
+  height: 60%;
   position: fixed;
   right: 0;
-  top: 80px;
+  top: 25vh;
   width: 50%;
 }
 .inside #map {
@@ -232,7 +231,6 @@ label {
 .inside #footer {
   bottom: 0;
   position: absolute;
-  width: 50%;
 }
 #restaurant-name {
   color: #f18200;
@@ -245,7 +243,7 @@ label {
 	height: 40px;
 }
 #restaurant-img {
-	width: 90%;
+	width: 100%;
 }
 #restaurant-address {
   font-size: 1.5em;
@@ -262,7 +260,7 @@ label {
   padding: 2px 0;
   text-align: center;
   text-transform: uppercase;
-	width: 90%;
+	width: 100%;
 }
 #restaurant-container, #reviews-container {
   border-bottom: 1px solid #d9d9d9;
@@ -286,7 +284,7 @@ label {
 }
 #reviews-list {
   margin: 0;
-  padding: 0;
+  padding: 25px;
 }
 #reviews-list li {
   background-color: #fff;
@@ -297,7 +295,7 @@ label {
   overflow: hidden;
   padding: 0 20px 20px;
   position: relative;
-  width: 85%;
+  width: 90%;
 	display: flex;
 	flex-direction: row;
 	flex-wrap: wrap;
@@ -305,6 +303,21 @@ label {
 }
 #reviews-list li p {
   margin: 0 0 10px;
+}
+#reviews-list li>p:nth-child(1) {
+  width: 50%;
+  font-weight: bolder;
+}
+#reviews-list li>p:nth-child(2) {
+  width: 50%;
+  font-weight: bolder;
+  text-align: right;
+  color: black
+}
+#reviews-list li>p:nth-child(3) {
+  width: 100%;
+  font-weight: bolder;
+  color: orange;
 }
 #restaurant-hours td {
   color: #666;
