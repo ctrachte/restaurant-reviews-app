@@ -82,6 +82,7 @@ fetchRestaurantFromURL = (callback) => {
 fillRestaurantHTML = (restaurant = self.restaurant) => {
   const name = document.getElementById('restaurant-name');
   name.innerHTML = restaurant.name;
+  name.tabIndex = 0; // set the tab index for screen readers
 
   const address = document.getElementById('restaurant-address');
   address.innerHTML = restaurant.address;
@@ -89,9 +90,14 @@ fillRestaurantHTML = (restaurant = self.restaurant) => {
   const image = document.getElementById('restaurant-img');
   image.className = 'restaurant-img'
   image.src = DBHelper.imageUrlForRestaurant(restaurant);
+  imag.alt = restaurant.name; // set alt attribute for accessiblity
+  image.tabIndex = 0; // set the tab index for screen readers
+
 
   const cuisine = document.getElementById('restaurant-cuisine');
   cuisine.innerHTML = restaurant.cuisine_type;
+  cuisine.tabIndex = 0; // set the tab index for screen readers
+
 
   // fill operating hours
   if (restaurant.operating_hours) {
@@ -137,6 +143,7 @@ fillReviewsHTML = (reviews = self.restaurant.reviews) => {
     return;
   }
   const ul = document.getElementById('reviews-list');
+  ul.tabIndex = 0; // set tab index for screenreaders
   reviews.forEach(review => {
     ul.appendChild(createReviewHTML(review));
   });
@@ -151,6 +158,8 @@ createReviewHTML = (review) => {
   const name = document.createElement('p');
   name.innerHTML = review.name;
   li.appendChild(name);
+  li.tabIndex = 0; // set tab index for screenreaders
+
 
   const date = document.createElement('p');
   date.innerHTML = review.date;
