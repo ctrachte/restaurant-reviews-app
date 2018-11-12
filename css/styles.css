@@ -45,7 +45,6 @@ article, aside, canvas, details, figcaption, figure, footer, header, hgroup, men
 #footer {
   background-color: #444;
   color: #aaa;
-	width:100%;
   font-size: 8pt;
   letter-spacing: 1px;
   padding: 25px;
@@ -175,7 +174,6 @@ label {
   display: block;
   margin: 0;
   max-width: 100%;
-  min-height: 248px;
   min-width: 100%;
 }
 #restaurants-list li h1 {

@@ -52,14 +52,17 @@
     padding: 5px;
     margin: 0 auto;
   }
-  .inside #footer {
-    width: 100%;
-    padding-left: 0;
-    padding-right: 0;
-    padding-top: 10px;
+  .filter-options {
+    flex-wrap: wrap;
+    height:auto;
   }
-
+  #reviews-list {
+    margin-bottom: 50px;
+  }
   #reviews-container h2 {
     text-align: center;
+  }
+  #restaurant-name {
+    padding:15px;
   }
 }
